@@ -1,0 +1,22 @@
+{
+    "appName": "GithubPRHelper",
+    "projectId": "79e48f39-8035-4e04-9f95-a377c87fbd5c",
+    "solutionSettings": {
+        "name": "fx-solution-azure",
+        "version": "1.0.0",
+        "hostType": "Azure",
+        "azureResources": [],
+        "capabilities": [
+            "Bot"
+        ],
+        "activeResourcePlugins": [
+            "fx-resource-bot",
+            "fx-resource-aad-app-for-teams",
+            "fx-resource-local-debug",
+            "fx-resource-appstudio"
+        ]
+    },
+    "version": "1.0.0",
+    "activeEnvironment": "dev",
+    "programmingLanguage": "typescript"
+}
