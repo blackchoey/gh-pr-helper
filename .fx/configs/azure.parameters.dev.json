@@ -9,19 +9,22 @@
       "value": "{{profile.fx-resource-bot.botId}}"
     },
     "bot_aadClientSecret": {
-      "value": "{{profile.fx-resource-bot.botPassword}}"
+      "value": "{{BOT_AAD_APP_SECRET}}"
     },
     "m365ClientId": {
       "value": "{{profile.fx-resource-aad-app-for-teams.clientId}}"
     },
     "m365ClientSecret": {
-      "value": "{{profile.fx-resource-aad-app-for-teams.clientSecret}}"
+      "value": "{{M365_AAD_APP_SECRET}}"
     },
     "m365TenantId": {
       "value": "{{profile.fx-resource-aad-app-for-teams.tenantId}}"
     },
     "m365OauthAuthorityHost": {
       "value": "{{profile.fx-resource-aad-app-for-teams.oauthHost}}"
+    },
+    "bot_webAppSKU": {
+      "value": "B1"
     }
   }
 }
