@@ -8,18 +8,19 @@ on:
 
 jobs:
   deployToDev:
-    name: Deploy to dev environment
-
+    name: Deploy to staging environment
+    environment: staging
     runs-on: ubuntu-latest
 
     env:
-      AZURE_ACCOUNT_NAME: fxtest02@microsoft.com
+      AZURE_ACCOUNT_NAME: chaoyicicdtest@blackchoeyoutlook.onmicrosoft.com
       AZURE_ACCOUNT_PASSWORD: ${{secrets.AZURE_ACCOUNT_PASSWORD}}
-      AZURE_SUBSCRIPTION_ID: 1756abc0-3554-4341-8d6a-46674962ea19
-      AZURE_TENANT_ID: 72f988bf-86f1-41af-91ab-2d7cd011db47
+      AZURE_SUBSCRIPTION_ID: ee788f54-a267-4d2f-bc9e-766957df46e5
+      AZURE_TENANT_ID: f0348563-e707-449c-8685-c83d24eaf3c0
       M365_ACCOUNT_NAME: fxtest02@microsoft.com
       M365_ACCOUNT_PASSWORD: ${{secrets.M365_ACCOUNT_PASSWORD}}
       TEAMSFX_INSIDER_PREVIEW: true
+      CI_ENABLED: true
     
     steps:
       - uses: actions/setup-node@v2
@@ -29,24 +30,24 @@ jobs:
       - name: Checkout the code
         uses: actions/checkout@v2
 
+      - name: Install TeamsFx CLI
+        run: npm install
+
       - name: Provision
-        uses: OfficeDev/teamsfx-cli-action@v1
-        with:
-          commands: provision
-          subscription: 1756abc0-3554-4341-8d6a-46674962ea19
+        run: npx teamsfx provision --subscription ee788f54-a267-4d2f-bc9e-766957df46e5 --env staging
+        env:
+          BOT_AAD_APP_SECRET: ${{secrets.BOT_AAD_APP_SECRET}}
+          M365_AAD_APP_SECRET: ${{secrets.M365_AAD_APP_SECRET}}
+
 
       - name: Deploy
-        uses: OfficeDev/teamsfx-cli-action@v1
-        with:
-          commands: deploy
+        run: npx teamsfx deploy --env staging
 
       - name: Package
-        uses: OfficeDev/teamsfx-cli-action@v1
-        with:
-          commands: package
+        run: npx teamsfx package --env staging
       
       - name: Upload Teams App's package as artifact
         uses: actions/upload-artifact@v2
         with:
           name: appPackage
-          path: templates/appPackage/appPackage.zip
+          path: appPackage/appPackage.staging.zip
