@@ -22,6 +22,9 @@
     },
     "m365OauthAuthorityHost": {
       "value": "{{profile.fx-resource-aad-app-for-teams.oauthHost}}"
+    },
+    "bot_webAppSKU": {
+      "value": "F1"
     }
   }
 }
