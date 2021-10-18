@@ -52,7 +52,7 @@ jobs:
           name: appPackage
           path: appPackage/appPackage.staging.zip
 
-deployToProd:
+  deployToProd:
     name: Deploy to prod environment
     environment: prod
     runs-on: ubuntu-latest
