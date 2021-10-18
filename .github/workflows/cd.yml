@@ -1,0 +1,51 @@
+name: CD
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deployToDev:
+    name: Deploy to dev environment
+
+    runs-on: ubuntu-latest
+
+    env:
+      AZURE_ACCOUNT_NAME: fxtest02@microsoft.com
+      AZURE_ACCOUNT_PASSWORD: ${{secrets.AZURE_ACCOUNT_PASSWORD}}
+      AZURE_SUBSCRIPTION_ID: 1756abc0-3554-4341-8d6a-46674962ea19
+      AZURE_TENANT_ID: 72f988bf-86f1-41af-91ab-2d7cd011db47
+      M365_ACCOUNT_NAME: fxtest02@microsoft.com
+      M365_ACCOUNT_PASSWORD: ${{secrets.M365_ACCOUNT_PASSWORD}}
+    
+    steps:
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Checkout the code
+        uses: actions/checkout@v2
+
+      - name: Provision
+        uses: OfficeDev/teamsfx-cli-action@v1
+        with:
+          commands: provision
+          subscription: 1756abc0-3554-4341-8d6a-46674962ea19
+
+      - name: Deploy
+        uses: OfficeDev/teamsfx-cli-action@v1
+        with:
+          commands: deploy
+
+      - name: Package
+        uses: OfficeDev/teamsfx-cli-action@v1
+        with:
+          commands: package
+      
+      - name: Upload Teams App's package as artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: appPackage
+          path: templates/appPackage/appPackage.zip
