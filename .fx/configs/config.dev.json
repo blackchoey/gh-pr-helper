@@ -6,15 +6,5 @@
             "short": "GithubPRHelper",
             "full": "Full name for GithubPRHelper"
         }
-    },
-    "auth": {
-        "clientId": "5576a75b-e5c4-49b2-b772-d848a68945cd",
-        "clientSecret": "fake",
-        "objectId": "fd94ba0a-19e6-4f83-b60a-f71ea12e9f3d",
-        "accessAsUserScopeId": "6b8862a5-8f37-4ca6-acb4-223c06c0bcdc"
-    },
-    "bot": {
-        "appId": "501e4645-2534-41e1-90a7-07725cc5c688",
-        "appPassword": "fake"
     }
 }
