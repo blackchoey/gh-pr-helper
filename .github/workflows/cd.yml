@@ -54,6 +54,7 @@ jobs:
 
   deployToProd:
     name: Deploy to prod environment
+    needs: deployToStaging
     environment: prod
     runs-on: ubuntu-latest
 
