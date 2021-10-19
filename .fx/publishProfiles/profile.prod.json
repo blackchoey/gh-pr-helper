@@ -1,0 +1,37 @@
+{
+    "solution": {
+        "resourceNameSuffix": "45d66c",
+        "resourceGroupName": "GithubPRHelper-prod-rg",
+        "tenantId": "f0348563-e707-449c-8685-c83d24eaf3c0",
+        "subscriptionId": "ee788f54-a267-4d2f-bc9e-766957df46e5",
+        "subscriptionName": "Visual Studio Enterprise",
+        "location": "East US",
+        "teamsAppTenantId": "{{solution.teamsAppTenantId}}",
+        "provisionSucceeded": true
+    },
+    "fx-resource-appstudio": {
+        "teamsAppId": "82d57c74-56b6-4926-a8d6-f7b240acbe0c"
+    },
+    "fx-resource-bot": {
+        "botId": "b264dd0a-f482-43cb-80ff-afaa78d2c242",
+        "botPassword": "fake",
+        "objectId": "848b1e11-a0b2-4d2d-b250-f8e27a413230",
+        "validDomain": "ghprhelperprod-bot-sites.azurewebsites.net",
+        "appServicePlan": "GhPrHelperProd-bot-serverfarms",
+        "botChannelReg": "GhPrHelperProd-bot-service",
+        "botWebAppResourceId": "/subscriptions/ee788f54-a267-4d2f-bc9e-766957df46e5/resourceGroups/GithubPRHelper-prod-rg/providers/Microsoft.Web/sites/GhPrHelperProd-bot-sites",
+        "siteName": "GhPrHelperProd-bot-sites",
+        "siteEndpoint": "https://ghprhelperprod-bot-sites.azurewebsites.net",
+        "skuName": "F1"
+    },
+    "fx-resource-aad-app-for-teams": {
+        "clientId": "2918c0f7-2f5f-45d9-8c0d-ab94088b3807",
+        "clientSecret": "fake",
+        "objectId": "67ee3355-3f63-4a40-8397-f67ac9245b78",
+        "oauth2PermissionScopeId": "dbe91871-1a7e-4e59-b7fe-8ce4773e17c9",
+        "tenantId": "72f988bf-86f1-41af-91ab-2d7cd011db47",
+        "oauthHost": "https://login.microsoftonline.com",
+        "oauthAuthority": "https://login.microsoftonline.com/72f988bf-86f1-41af-91ab-2d7cd011db47",
+        "applicationIdUris": "api://botid-b264dd0a-f482-43cb-80ff-afaa78d2c242"
+    }
+}
