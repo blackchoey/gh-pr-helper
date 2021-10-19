@@ -49,7 +49,7 @@ jobs:
       - name: Upload Teams App's package as artifact
         uses: actions/upload-artifact@v2
         with:
-          name: appPackage
+          name: appPackage.staging.zip
           path: appPackage/appPackage.staging.zip
 
   deployToProd:
@@ -95,5 +95,5 @@ jobs:
       - name: Upload Teams App's package as artifact
         uses: actions/upload-artifact@v2
         with:
-          name: appPackage
+          name: appPackage.prod.zip
           path: appPackage/appPackage.prod.zip
